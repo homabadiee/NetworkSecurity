@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body
+        {
+            background: linear-gradient(115deg, #56d8e4 10%, #9f01ea 90%);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container
+        {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .myform
+        {
+            background-color: #f8f9fa;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .form-control
+        {
+            border: 1px solid silver;
+            border-radius: 8px;
+            padding: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="myform">
+            <form method="POST" action="{% url 'submitData' %}">
+                {% csrf_token %}
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label for="dimstep" class="form-label">Username</label>
+                        <input type="text" id="username" name="username" class="form-control">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <label for="lights" class="form-label">Password</label>
+                        <input type="text" id="password" name="password" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12" style="display: flex; justify-content: center;">
+                        <div style="padding: 0.5rem">
+                            <button type="submit" class="btn btn-primary" style="border-radius: 8px;">Submit</button>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
